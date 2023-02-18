@@ -1,7 +1,7 @@
 {
   "name": "youtube-live-chat-flow",
   "description": "Chrome Extension for Flow Chat Messages on YouTube Live.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@fiahfy/semaphore": "^0.0.2",
     "@vue/composition-api": "^1.6.2",
