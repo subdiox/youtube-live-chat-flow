@@ -1,5 +1,4 @@
 {
-  "extends": "@fiahfy/tsconfig",
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",

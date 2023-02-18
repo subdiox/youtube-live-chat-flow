@@ -39,16 +39,6 @@
     "@typescript-eslint/parser" "^5.22.0"
     eslint-config-prettier "^8.5.0"
 
-"@fiahfy/semaphore@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@fiahfy/semaphore/-/semaphore-0.0.2.tgz#f3121454fd03ac1ba35ee6cf6b2ae2d1a0d7d117"
-  integrity sha512-dkxuLmntMXqE6VaLE7PnJiCMqGKm3P7B7PQcwNqIj7rrAYXT00MSYnBQ66TDrrq6vY2gmbkOqc7KB8gCsLQUdw==
-
-"@fiahfy/tsconfig@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@fiahfy/tsconfig/-/tsconfig-0.0.1.tgz#e7edc0dc4e2bb4a1c40ec4c20bbfb024290c59ef"
-  integrity sha512-RrQuxBpQp4LWXVt/jqIKrnqj0HQljpRZL6f7tf7NSs6qh1GcX5QAWgc7sY/u4/AWxhkCwVGVTWupKmF+72vrMA==
-
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
