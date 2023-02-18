@@ -13,13 +13,11 @@ import {
 const initialState: Settings = {
   background: false,
   backgroundOpacity: 0.4,
-  bottomChatInputEnabled: true,
   chatVisible: true,
   delayTime: 0,
   displayTime: 5,
   emojiStyle: 'image',
   extendedStyle: '',
-  growBottomChatInputEnabled: false,
   heightType: 'flexible',
   lineHeight: 64,
   lines: 12,
@@ -73,13 +71,11 @@ const initialState: Settings = {
 export default class SettingsModule extends VuexModule {
   background = initialState.background
   backgroundOpacity = initialState.backgroundOpacity
-  bottomChatInputEnabled = true
   chatVisible = true
   delayTime = initialState.delayTime
   displayTime = initialState.displayTime
   emojiStyle = initialState.emojiStyle
   extendedStyle = initialState.extendedStyle
-  growBottomChatInputEnabled = false
   heightType = initialState.heightType
   lineHeight = initialState.lineHeight
   lines = initialState.lines
@@ -125,14 +121,6 @@ export default class SettingsModule extends VuexModule {
     this.backgroundOpacity = backgroundOpacity
   }
   @Mutation
-  setBottomChatInputEnabled({
-    bottomChatInputEnabled,
-  }: {
-    bottomChatInputEnabled: boolean
-  }) {
-    this.bottomChatInputEnabled = bottomChatInputEnabled
-  }
-  @Mutation
   setChatVisible({ chatVisible }: { chatVisible: boolean }) {
     this.chatVisible = chatVisible
   }
@@ -151,14 +139,6 @@ export default class SettingsModule extends VuexModule {
   @Mutation
   setExtendedStyle({ extendedStyle }: { extendedStyle: string }) {
     this.extendedStyle = extendedStyle
-  }
-  @Mutation
-  setGrowBottomChatInputEnabled({
-    growBottomChatInputEnabled,
-  }: {
-    growBottomChatInputEnabled: boolean
-  }) {
-    this.growBottomChatInputEnabled = growBottomChatInputEnabled
   }
   @Mutation
   setHeightType({ heightType }: { heightType: HeightType }) {
