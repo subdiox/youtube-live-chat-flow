@@ -9,7 +9,7 @@
       "~/*": ["./src/*"],
       "~~/*": ["./*"]
     },
-    "types": ["chrome", "vuetify"],
+    "types": ["chrome", "vuetify", "node"],
     "experimentalDecorators": true,
     "strict": true,
     "moduleResolution": "node",
