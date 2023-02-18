@@ -1,5 +1,5 @@
 {
-  "extends": "@fiahfy/tsconfig/tsconfig",
+  "extends": "@fiahfy/tsconfig",
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",
@@ -10,7 +10,12 @@
       "~~/*": ["./*"]
     },
     "types": ["chrome", "vuetify"],
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }

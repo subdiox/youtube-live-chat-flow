@@ -1,1 +1,4 @@
-module.exports = require('@fiahfy/prettier-config')
+module.exports = {
+  semi: false,
+  singleQuote: true,
+}
