@@ -1,11 +1,11 @@
-import { Semaphore } from 'await-semaphore'
+import { Sema } from 'async-sema'
 import { Message, Settings } from '~/models'
 import { querySelectorAsync, waitAllImagesLoaded } from '~/utils/dom-helper'
 import MessageSettings from '~/utils/message-settings'
 import { parse } from '~/utils/message-parser'
 import { render } from '~/utils/message-renderer'
 
-const sem = new Semaphore(1)
+const sem = new Sema(3)
 
 const ClassName = {
   filterActivated: 'ylcfr-active',
