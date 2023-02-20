@@ -120,8 +120,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { settingsStore } from '~/store'
 
 const stackDirections = [
@@ -133,79 +133,64 @@ const overflows = [
   { text: 'Overlay', value: 'overlay' },
 ]
 
-export default defineComponent({
-  setup() {
-    const delayTime = computed({
-      get: () => {
-        return settingsStore.delayTime
-      },
-      set: (value) => {
-        settingsStore.setDelayTime({
-          delayTime: Number(value),
-        })
-      },
+const delayTime = computed({
+  get: () => {
+    return settingsStore.delayTime
+  },
+  set: (value) => {
+    settingsStore.setDelayTime({
+      delayTime: Number(value),
     })
-    const displayTime = computed({
-      get: () => {
-        return settingsStore.displayTime
-      },
-      set: (value) => {
-        settingsStore.setDisplayTime({
-          displayTime: Number(value),
-        })
-      },
+  },
+})
+const displayTime = computed({
+  get: () => {
+    return settingsStore.displayTime
+  },
+  set: (value) => {
+    settingsStore.setDisplayTime({
+      displayTime: Number(value),
     })
-    const maxDisplays = computed({
-      get: () => {
-        return settingsStore.maxDisplays
-      },
-      set: (value) => {
-        settingsStore.setMaxDisplays({
-          maxDisplays: Number(value),
-        })
-      },
+  },
+})
+const maxDisplays = computed({
+  get: () => {
+    return settingsStore.maxDisplays
+  },
+  set: (value) => {
+    settingsStore.setMaxDisplays({
+      maxDisplays: Number(value),
     })
-    const maxLines = computed({
-      get: () => {
-        return settingsStore.maxLines
-      },
-      set: (value) => {
-        settingsStore.setMaxLines({
-          maxLines: Number(value),
-        })
-      },
+  },
+})
+const maxLines = computed({
+  get: () => {
+    return settingsStore.maxLines
+  },
+  set: (value) => {
+    settingsStore.setMaxLines({
+      maxLines: Number(value),
     })
-    const overflow = computed({
-      get: () => {
-        return settingsStore.overflow
-      },
-      set: (value) => {
-        settingsStore.setOverflow({
-          overflow: value,
-        })
-      },
+  },
+})
+const overflow = computed({
+  get: () => {
+    return settingsStore.overflow
+  },
+  set: (value) => {
+    settingsStore.setOverflow({
+      overflow: value,
     })
-    const stackDirection = computed({
-      get: () => {
-        return settingsStore.stackDirection
-      },
-      set: (value) => {
-        settingsStore.setStackDirection({
-          stackDirection: value,
-        })
-      },
+  },
+})
+const stackDirection = computed({
+  get: () => {
+    return settingsStore.stackDirection
+  },
+  set: (value) => {
+    settingsStore.setStackDirection({
+      stackDirection: value,
     })
-
-    return {
-      delayTime,
-      displayTime,
-      maxDisplays,
-      maxLines,
-      overflow,
-      overflows,
-      stackDirection,
-      stackDirections,
-    }
   },
 })
 </script>

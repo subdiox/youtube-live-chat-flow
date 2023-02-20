@@ -68,8 +68,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+<script setup lang="ts">
 import { AuthorType, MessageType, Template } from '~/models'
 import { settingsStore } from '~/store'
 
@@ -81,55 +80,36 @@ const templates = [
   { text: '2 lines', value: 'two-line' },
 ]
 
-export default defineComponent({
-  setup() {
-    const getColor = (authorType: AuthorType) => {
-      return settingsStore.styles[authorType].color
-    }
-    const setColor = (authorType: AuthorType, color: string) => {
-      return settingsStore.updateStyle({ authorType, color })
-    }
-    const getTemplate = (authorType: AuthorType) => {
-      return settingsStore.styles[authorType].template
-    }
-    const setTemplate = (authorType: AuthorType, template: Template) => {
-      return settingsStore.updateStyle({ authorType, template })
-    }
-    const isVisible = (type: AuthorType | MessageType) => {
-      return settingsStore.visibilities[type]
-    }
-    const isAvatar = (authorType: AuthorType) => {
-      return settingsStore.styles[authorType].avatar
-    }
-    const getTitle = (messageType: MessageType) => {
-      return messageType.replace('-', ' ')
-    }
+const getColor = (authorType: AuthorType) => {
+  return settingsStore.styles[authorType].color
+}
+const setColor = (authorType: AuthorType, color: string) => {
+  return settingsStore.updateStyle({ authorType, color })
+}
+const getTemplate = (authorType: AuthorType) => {
+  return settingsStore.styles[authorType].template
+}
+const setTemplate = (authorType: AuthorType, template: Template) => {
+  return settingsStore.updateStyle({ authorType, template })
+}
+const isVisible = (type: AuthorType | MessageType) => {
+  return settingsStore.visibilities[type]
+}
+const isAvatar = (authorType: AuthorType) => {
+  return settingsStore.styles[authorType].avatar
+}
+const getTitle = (messageType: MessageType) => {
+  return messageType.replace('-', ' ')
+}
 
-    const handleClickVisibility = (type: AuthorType | MessageType) => {
-      const visibility = !settingsStore.visibilities[type]
-      return settingsStore.setVisibility({ type, visibility })
-    }
-    const handleClickAvatar = (authorType: AuthorType) => {
-      const style = settingsStore.styles[authorType]
-      return settingsStore.updateStyle({ authorType, avatar: !style.avatar })
-    }
-
-    return {
-      authorTypes,
-      messageTypes,
-      templates,
-      getColor,
-      setColor,
-      getTemplate,
-      setTemplate,
-      isVisible,
-      isAvatar,
-      getTitle,
-      handleClickVisibility,
-      handleClickAvatar,
-    }
-  },
-})
+const handleClickVisibility = (type: AuthorType | MessageType) => {
+  const visibility = !settingsStore.visibilities[type]
+  return settingsStore.setVisibility({ type, visibility })
+}
+const handleClickAvatar = (authorType: AuthorType) => {
+  const style = settingsStore.styles[authorType]
+  return settingsStore.updateStyle({ authorType, avatar: !style.avatar })
+}
 </script>
 
 <style lang="scss" scoped>

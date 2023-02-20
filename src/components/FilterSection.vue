@@ -7,20 +7,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
-  setup() {
-    const handleClickLink = () => {
-      window.open(
-        'https://chrome.google.com/webstore/detail/chat-filter-for-youtube-l/jalcplhakmckbmlbidmbmpaegcpbejog'
-      )
-    }
-
-    return {
-      handleClickLink,
-    }
-  },
-})
+<script setup lang="ts">
+const handleClickLink = () => {
+  window.open(
+    'https://chrome.google.com/webstore/detail/chat-filter-for-youtube-l/jalcplhakmckbmlbidmbmpaegcpbejog'
+  )
+}
 </script>

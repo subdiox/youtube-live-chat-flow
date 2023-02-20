@@ -200,8 +200,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { settingsStore } from '~/store'
 
 const heightTypes = [
@@ -215,123 +215,104 @@ const emojiStyles = [
   { text: 'None', value: 'none' },
 ]
 
-export default defineComponent({
-  setup() {
-    const background = computed({
-      get: () => {
-        return settingsStore.background
-      },
-      set: (value) => {
-        settingsStore.setBackground({
-          background: value,
-        })
-      },
+const background = computed({
+  get: () => {
+    return settingsStore.background
+  },
+  set: (value) => {
+    settingsStore.setBackground({
+      background: value,
     })
-    const backgroundOpacity = computed({
-      get: () => {
-        return settingsStore.backgroundOpacity
-      },
-      set: (value) => {
-        settingsStore.setBackgroundOpacity({
-          backgroundOpacity: Number(value),
-        })
-      },
+  },
+})
+const backgroundOpacity = computed({
+  get: () => {
+    return settingsStore.backgroundOpacity
+  },
+  set: (value) => {
+    settingsStore.setBackgroundOpacity({
+      backgroundOpacity: Number(value),
     })
-    const emojiStyle = computed({
-      get: () => {
-        return settingsStore.emojiStyle
-      },
-      set: (value) => {
-        settingsStore.setEmojiStyle({
-          emojiStyle: value,
-        })
-      },
+  },
+})
+const emojiStyle = computed({
+  get: () => {
+    return settingsStore.emojiStyle
+  },
+  set: (value) => {
+    settingsStore.setEmojiStyle({
+      emojiStyle: value,
     })
-    const extendedStyle = computed({
-      get: () => {
-        return settingsStore.extendedStyle
-      },
-      set: (value) => {
-        settingsStore.setExtendedStyle({
-          extendedStyle: value,
-        })
-      },
+  },
+})
+const extendedStyle = computed({
+  get: () => {
+    return settingsStore.extendedStyle
+  },
+  set: (value) => {
+    settingsStore.setExtendedStyle({
+      extendedStyle: value,
     })
-    const heightType = computed({
-      get: () => {
-        return settingsStore.heightType
-      },
-      set: (value) => {
-        settingsStore.setHeightType({
-          heightType: value,
-        })
-      },
+  },
+})
+const heightType = computed({
+  get: () => {
+    return settingsStore.heightType
+  },
+  set: (value) => {
+    settingsStore.setHeightType({
+      heightType: value,
     })
-    const lineHeight = computed({
-      get: () => {
-        return settingsStore.lineHeight
-      },
-      set: (value) => {
-        settingsStore.setLineHeight({
-          lineHeight: Number(value),
-        })
-      },
+  },
+})
+const lineHeight = computed({
+  get: () => {
+    return settingsStore.lineHeight
+  },
+  set: (value) => {
+    settingsStore.setLineHeight({
+      lineHeight: Number(value),
     })
-    const lines = computed({
-      get: () => {
-        return settingsStore.lines
-      },
-      set: (value) => {
-        settingsStore.setLines({
-          lines: Number(value),
-        })
-      },
+  },
+})
+const lines = computed({
+  get: () => {
+    return settingsStore.lines
+  },
+  set: (value) => {
+    settingsStore.setLines({
+      lines: Number(value),
     })
-    const maxWidth = computed({
-      get: () => {
-        return settingsStore.maxWidth
-      },
-      set: (value) => {
-        settingsStore.setMaxWidth({
-          maxWidth: Number(value),
-        })
-      },
+  },
+})
+const maxWidth = computed({
+  get: () => {
+    return settingsStore.maxWidth
+  },
+  set: (value) => {
+    settingsStore.setMaxWidth({
+      maxWidth: Number(value),
     })
-    const opacity = computed({
-      get: () => {
-        return settingsStore.opacity
-      },
-      set: (value) => {
-        settingsStore.setOpacity({
-          opacity: Number(value),
-        })
-      },
+  },
+})
+const opacity = computed({
+  get: () => {
+    return settingsStore.opacity
+  },
+  set: (value) => {
+    settingsStore.setOpacity({
+      opacity: Number(value),
     })
-    const outlineRatio = computed({
-      get: () => {
-        return (settingsStore.outlineRatio * 1000) / 10
-      },
-      set: (value) => {
-        settingsStore.setOutlineRatio({
-          outlineRatio: (Number(value) * 10) / 1000,
-        })
-      },
+  },
+})
+const outlineRatio = computed({
+  get: () => {
+    return (settingsStore.outlineRatio * 1000) / 10
+  },
+  set: (value) => {
+    settingsStore.setOutlineRatio({
+      outlineRatio: (Number(value) * 10) / 1000,
     })
-
-    return {
-      background,
-      backgroundOpacity,
-      emojiStyle,
-      emojiStyles,
-      extendedStyle,
-      heightType,
-      heightTypes,
-      lineHeight,
-      lines,
-      maxWidth,
-      opacity,
-      outlineRatio,
-    }
   },
 })
 </script>

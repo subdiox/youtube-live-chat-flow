@@ -25,8 +25,7 @@
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+<script setup lang="ts">
 import AppearanceSection from '~/components/AppearanceSection.vue'
 import BehaviorSection from '~/components/BehaviorSection.vue'
 import FilterSection from '~/components/FilterSection.vue'
@@ -34,24 +33,9 @@ import GeneralSection from '~/components/GeneralSection.vue'
 import OthersSection from '~/components/OthersSection.vue'
 import { settingsStore } from '~/store'
 
-export default defineComponent({
-  components: {
-    AppearanceSection,
-    BehaviorSection,
-    FilterSection,
-    GeneralSection,
-    OthersSection,
-  },
-  setup() {
-    const handleClickReset = () => {
-      settingsStore.resetState()
-    }
-
-    return {
-      handleClickReset,
-    }
-  },
-})
+const handleClickReset = () => {
+  settingsStore.resetState()
+}
 </script>
 
 <style lang="scss">

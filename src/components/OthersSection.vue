@@ -11,25 +11,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from '@vue/composition-api'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { settingsStore } from '~/store'
 
-export default defineComponent({
-  setup() {
-    const chatVisible = computed({
-      get: () => {
-        return settingsStore.chatVisible
-      },
-      set: (value) => {
-        settingsStore.setChatVisible({
-          chatVisible: value,
-        })
-      },
+const chatVisible = computed({
+  get: () => {
+    return settingsStore.chatVisible
+  },
+  set: (value) => {
+    settingsStore.setChatVisible({
+      chatVisible: value,
     })
-    return {
-      chatVisible,
-    }
   },
 })
 </script>
