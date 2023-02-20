@@ -72,8 +72,18 @@
 import { AuthorType, MessageType, Template } from '~/models'
 import { settingsStore } from '~/store'
 
-const authorTypes = ['guest', 'member', 'moderator', 'owner', 'you']
-const messageTypes = ['super-chat', 'super-sticker', 'membership']
+const authorTypes: AuthorType[] = [
+  'guest',
+  'member',
+  'moderator',
+  'owner',
+  'you',
+]
+const messageTypes: MessageType[] = [
+  'super-chat',
+  'super-sticker',
+  'membership',
+]
 const templates = [
   { text: '1 line (without Author)', value: 'one-line-without-author' },
   { text: '1 line (with Author)', value: 'one-line-with-author' },

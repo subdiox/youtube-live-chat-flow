@@ -21,11 +21,13 @@ export type Style = {
 export type Settings = {
   background: boolean
   backgroundOpacity: number
+  bottomChatInputEnabled: boolean
   chatVisible: boolean
   delayTime: number
   displayTime: number
   emojiStyle: EmojiStyle
   extendedStyle: string
+  growBottomChatInputEnabled: boolean
   heightType: HeightType
   lineHeight: number
   lines: number
