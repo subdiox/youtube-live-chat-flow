@@ -8,7 +8,7 @@
       "~/*": ["./src/*"],
       "~~/*": ["./*"]
     },
-    "types": ["chrome", "vuetify", "node"],
+    "types": ["chrome", "vuetify"],
     "experimentalDecorators": true,
     "strict": true,
     "moduleResolution": "node",

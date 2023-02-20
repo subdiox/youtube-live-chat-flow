@@ -1,11 +1,11 @@
-import { Sema } from 'async-sema'
+import { semaphore } from '@fiahfy/semaphore'
 import { Message, Settings } from '~/models'
 import { querySelectorAsync, waitAllImagesLoaded } from '~/utils/dom-helper'
 import MessageSettings from '~/utils/message-settings'
 import { parse } from '~/utils/message-parser'
 import { render } from '~/utils/message-renderer'
 
-const sem = new Sema(3)
+const sem = semaphore()
 
 const ClassName = {
   filterActivated: 'ylcfr-active',
@@ -140,7 +140,7 @@ export default class FlowController {
     container.appendChild(me)
     await waitAllImagesLoaded(me)
 
-    sem.acquire().then(() => {
+    sem.acquire(async () => {
       if (!this.settings || video.paused) {
         me.remove()
         return
